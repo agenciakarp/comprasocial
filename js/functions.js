@@ -5,24 +5,28 @@ function show_modal(texto){
 		title:"Mensagem:",
 		message:texto,
 		cancelText:"Continuar",
-		cancelCallback: function(){console.log("cancelled");},
+		cancelCallback: function(){console.log("Cancel");},
 		doneText:"Ok",
-		doneCallback: function(){console.log("Done for!");},
+		doneCallback: function(){console.log("Ok");},
 		cancelOnly:true
 	});
-
 }
 
 //FUNCAO CADASTRAR USUARIO
 function user_add(){
-	input_nome = document.getElementById("nome").value
-	input_apelido = document.getElementById("apelido").value
-	input_email = document.getElementById("email").value
-	input_senha = document.getElementById("senha").value
-	input_senha_confirmar = document.getElementById("senha_confirmar").value
-	input_nascimento = document.getElementById("nascimento").value
-	if(nome && apelido && email && senha==senha_confirmar){
-		url = "../webservice.php";
+	input_nome = document.getElementById("nome").value;
+	input_apelido = document.getElementById("apelido").value;
+	input_email = document.getElementById("email").value;
+	input_senha = document.getElementById("senha").value;
+	input_senha_confirmar = document.getElementById("senha_confirmar").value;
+	input_nascimento = document.getElementById("nascimento").value;
+	function success(data,status){
+		//response = eval(data);
+		console.log(response);
+		show_modal(response);
+	}
+	if(input_nome && input_apelido && input_email && input_senha==input_senha_confirmar){
+		url = "http://sygoapp.com.br/webservice.php";
 		data = { action:"user_add", nome: input_nome, apelido: input_apelido,email: input_email, senha:input_senha,nascimento:input_nascimento };
 		$.ajax({
 			type: "POST",
@@ -30,11 +34,6 @@ function user_add(){
 			data: data,
 			success: success
 		});
-		function success(data,status){
-			response = eval(data);
-			console.log(response);
-			show_modal("Usuário cadastrado com sucesso");
-		}
 	}else{
 		show_modal("Confira os campos e tente novamente");
 	}
