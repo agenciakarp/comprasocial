@@ -1,0 +1,103 @@
+*{
+	font-size:12px;
+}
+
+#pageTitle{
+	display:none !important;
+}
+
+.btn{
+	background:#EB6536:
+	color:white;
+	padding:5px;
+	width:100px;
+	display:block;
+	margin:0 auto;
+}
+
+h1{
+	font-size:20px;
+	color:#EB6536;
+}
+
+h6{
+	color:gray;
+}
+
+.cardcontainer{
+	margin:20px 0px;
+}
+
+.card{
+	padding:5px;
+	border:1px solid #ddd;
+	margin:5px auto;
+	border-radius:1px;
+	width:90%;
+	background:#fff;
+}
+
+.card_btn{
+	color:white;
+	border-radius: 0 0 5px 5px;
+	margin:5px auto;
+	margin-top:-10px;
+	width:90%;
+	background:#EB6536;
+	padding:2px 5px;
+}
+
+.card > img{
+	width:110%;
+	padding:5px;
+	border:1px solid #ccc !important;
+	background:#fff;
+	margin-left:-5%;	
+}
+
+.smallphoto{
+	width:64px;
+	border-radius:5px;
+}
+
+.smallphotolojas{
+	margin:10px 0px;
+	width:100px;
+}
+
+#afui .color1{
+	background: #EB6536;
+	color:#fff;
+}
+
+#afui footer > a.pressed:not(.button) {
+	border-radius: 0px;
+	background: none repeat scroll 0% 0% #DB5526;
+}
+
+#afui .header {
+	background: none repeat scroll 0% 0% #EB6536;
+	border-color: #EB6536;
+}
+#afui .footer {
+	display:none !important;
+	background: none repeat scroll 0% 0% #EB6536;
+	border-color: #EB6536;
+}
+
+#afui > #aside_menu, #afui > #menu.tabletMenu {
+	color: #FFF;
+	background: none repeat scroll 0% 0% #333;
+	border-right: 1px solid #333;
+}
+
+#afui #aside_menu .list li, #afui #aside_menu .list .divider, #afui #aside_menu .list li:last-child, #afui #menu .list li, #afui #menu .list .divider, #afui #menu .list li:last-child {
+    border-color: #101012;
+}
+#afui .panel {
+	background: #e5e5e5;
+}
+
+#afui .panel h2 {
+	color: #EB6536;
+}

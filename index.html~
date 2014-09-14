@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- http://app-framework-software.intel.com/-->
+<!--HTML5 doctype-->
+<html>
+<head>
+	<script>
+	(function() {
+		if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+			var msViewportStyle = document.createElement("style");
+			msViewportStyle.appendChild(
+				document.createTextNode("@-ms-viewport{width:auto!important}")
+			);
+			document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+		}
+	})();
+	</script>
+	<meta charset="UTF-8">
+	<title>Compra Social</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="shortcut icon" href="logo.png">
+	<link rel="apple-touch-icon" href="logo.png" />
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/icons.css" />    
+ 	<link rel="stylesheet" type="text/css" href="css/main.css"  />
+	<link rel="stylesheet" type="text/css" href="css/appframework.css"  />
+	<link rel="stylesheet" type="text/css" href="css/lists.css"  />
+	<link rel="stylesheet" type="text/css" href="css/forms.css"  />
+	<link rel="stylesheet" type="text/css" href="css/buttons.css"  />  
+	<link rel="stylesheet" type="text/css" href="css/badges.css"  />  
+	<link rel="stylesheet" type="text/css" href="css/grid.css"  />
+
+	<link rel="stylesheet" type="text/css" href="css/style.css"  />
+
+
+	<script src="phonegap.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/appframework.min.js"></script>
+
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>  
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.scroller.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.selectBox.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchEvents.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchLayer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/appframework.ui.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script> -->
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/fade.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/flip.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/pop.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slide.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
+	<script>
+		$.ui.useOSThemes=false;
+	</script>
+
+</head>
+<body id="body">
+	<div id="afui">
+		<!--HEADER-->
+		<div id="header">
+			<a id="backButton" href="javascript:;" class="button" style="visibility: hidden; ">Back</a>
+			<div id="main" data-title="Teste" class="panel" selected="true" data-nav="main_nav"></div>
+			<img src="logo_big.png" style="text-align:center; width:28px; margin:0 auto; display:block; margin-top:5px;" />
+			<i class="fa fa-bars  fa-3x"  onclick="$.ui.toggleRightSideMenu();" style="float:right; margin:0 15px; margin-top:-35px;"></i>
+		</div>
+		<div id="content">
+			<!--MAIN-->
+			<div id="main" data-title="Inicio" class="panel" selected="true" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;">
+				<div style="margin-top:60px;">
+					<h1>Compra Social</h1>
+					<h3>Encontre e compartilhe ofertas com seus amigos</h3></br>
+					<img src="img/logo.png" style="width:100px; margin:0 auto; display:block;"/>
+				</div>
+				<a href="#login"><div class="btn">Entrar</div></a>
+				<a href="#cadastro"><div class="btn">Cadastrar</div></a>
+			</div>
+			<!--LOGIN-->
+			<div id="login" data-title="Login" class="panel">
+			</div>
+			<!--CADASTRO-->
+			<div id="cadastro" data-title="Cadastro" class="panel">
+				<div class="formGroupHead">Cadastro</div>
+				<form>
+					<input type="text" id="nome" placeholder="Nome *">
+					<input type="text" id="apelido" placeholder="Apelido *">
+					<input type="text" id="email" placeholder="Email *">
+					<input type="text" id="senha" placeholder="Senha *">
+					<input type="text" id="senha_confirmar" placeholder="Confirmar senha *">
+					<input type="text" id="nascimento" placeholder="Data de nascimento">
+				</form>
+				 <a onclick="user_add()" class="button">Cadastrar</a>
+ 			</div>
+			<!--MAIN-->
+			<div id="home" data-title="Home" class="panel" data-aside="rightNav">
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--AMIGOS-->
+			<div id="amigos" data-title="Amigos" class="panel">
+			</div>
+			<!--Lojas -->
+			<div id="lojas" data-title="Lojas" class="panel">
+			</div>
+			<!--Mapa -->
+			<div id="mapa" data-title="Mapa" class="panel">
+			</div>
+			<!--Config-->
+			<div id="config" data-title="Configurações" class="panel">
+				<ul class="list">
+					<li style="padding:10px;"><b>Facebook</b> <div style="float:right"> Conectar &#10095; </div></li>
+				</ul>
+				<div>
+					Ativando o facebook você poderá fazer parte da rede social do aplicativo
+				</div>
+				<ul class="list">
+					<li style="padding:10px;">
+						<b>Exibir minha localização</b>
+						<div style="float:right; margin-right:20px;">
+							<input type="checkbox" name="slider" id="slider" class="toggle">
+							<label for="slider" data-on="On" data-off="Off" style="position:relative; top:-9px;"></label>
+						</div>
+					</li>
+				</ul>
+				<div>
+					Compartilhe com seus amigos sua posição e descubrirá quem está perto de você nesse momento.
+				</div>
+				<h3 style="margin-top:10px;">Idioma do Aplicativo</h3>
+				<ul class="list">
+					<li style="padding:10px;">Inglês (US)</li>
+					<li style="padding:10px;"><b>Português (BR)</b><i class="fa fa-check" style="float:right;"></i></li>
+				</ul>
+			</div>
+
+		</div>
+		<!--MENU FOOTER-->
+		<div id="navbar">
+			<a href="#main" class="icon basket big" style="position: relative;">Produtos</a>
+			<a href="#lojas" class="icon home big" style="position: relative;">Lojas</a>
+			<a href="#mapa" class="icon location big" style="position: relative;">Mapa</a>
+			<a href="#main" class="icon star big" style="position: relative;">Promoções</a>
+			<a href="#amigos" class="icon user big" style="position: relative;">Amigos</a>
+		</div>
+		<div id="#navbar"></div>
+		<!--MENU LATERAL-->
+		<aside id="rightNav">
+			<div style="text-align:center; margin:10px 0px;">
+				<img class="smallphoto" src="img/dummy.jpg" />
+				<h3>Emilie Erikson</h3>
+				<h6>230 ofertas compartilhadas</h6>
+			</div>
+			<ul class="list">
+				<li><a href="#main" class="icon basket big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Produtos</a></li>
+				<li><a href="#lojas" class="icon home big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Lojas</a></li>
+				<li><a href="#mapa" class="icon location big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Mapa</a></li>
+				<li><a href="#main" class="icon star big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Promoções</a></li>
+				<li><a href="#amigos" class="icon user big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Meus Amigos</a></li>
+				<li><a href="#config" class="icon settings big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Configurações</a></li>
+			</ul>
+		</aside>
+	</div>
+</body>
+</html>
+
