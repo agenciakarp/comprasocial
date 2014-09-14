@@ -1,6 +1,8 @@
 //FUNCAO ERRO
 function show_modal(texto){
 	console.log(texto);
+	alert(texto);
+	/*
 	$.ui.popup( {
 		title:"Mensagem:",
 		message:texto,
@@ -9,7 +11,7 @@ function show_modal(texto){
 		doneText:"Ok",
 		doneCallback: function(){console.log("Ok");},
 		cancelOnly:true
-	});
+	});*/
 }
 
 //FUNCAO CADASTRAR USUARIO
@@ -22,8 +24,8 @@ function user_add(){
 	input_nascimento = document.getElementById("nascimento").value;
 	function success(data,status){
 		//response = eval(data);
-		console.log(response);
-		show_modal(response);
+		//console.log(data);
+		show_modal(data);
 	}
 	if(input_nome && input_apelido && input_email && input_senha==input_senha_confirmar){
 		url = "http://sygoapp.com.br/webservice.php";
