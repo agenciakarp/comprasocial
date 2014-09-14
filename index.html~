@@ -92,7 +92,7 @@
 			<div id="config" data-title="Configurações" class="panel"  data-defer="config.html" data-load="load_config"></div>
 		</div>
 		<!--Barra Lateral -->
-		<aside id="rightNav" >
+		<aside id="rightNav">
 			<div style="text-align:center; margin:10px 0px;">
 				<img class="smallphoto" src="img/dummy.jpg" />
 				<h3>Emilie Erikson</h3>
