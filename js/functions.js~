@@ -57,9 +57,7 @@ function user_login(){
 	input_senha = document.getElementById("senha_login").value;
 	function success(data,status){
 		response = eval(data);
-		console.log(response);
-		console.log(data);
-		if(data=="null"){
+		if(response==null){
 			show_modal("Ocorreu um erro");
 		}else{
 			localStorage.setItem('token', response[0]['id']);

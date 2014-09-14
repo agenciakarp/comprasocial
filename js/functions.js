@@ -98,6 +98,27 @@ function load_produtos(){
 	check_token();
 }
 
+//FUNCAO CARREGAR O PAINEL AMIGOS
+function load_amigos(){
+	check_token();
+}
+
+//FUNCAO CARREGAR O PAINEL LOJAS
+function load_lojas(){
+	check_token();
+}
+
+//FUNCAO CARREGAR O PAINEL MAPA
+function load_mapa(){
+	check_token();
+}
+
+//FUNCAO CARREGAR O PAINEL CONFIG
+function load_config(){
+	check_token();
+}
+
+
 //FUNCAO DE ESPERA PARA CARREGAR O APP
 function onDeviceReady() {
 	autologin();
