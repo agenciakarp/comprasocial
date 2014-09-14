@@ -1,0 +1,23 @@
+				<ul class="list">
+					<li style="padding:10px;"><b>Facebook</b> <div style="float:right"> Conectar &#10095; </div></li>
+				</ul>
+				<div>
+					Ativando o facebook você poderá fazer parte da rede social do aplicativo
+				</div>
+				<ul class="list">
+					<li style="padding:10px;">
+						<b>Exibir minha localização</b>
+						<div style="float:right; margin-right:20px;">
+							<input type="checkbox" name="slider" id="slider" class="toggle">
+							<label for="slider" data-on="On" data-off="Off" style="position:relative; top:-9px;"></label>
+						</div>
+					</li>
+				</ul>
+				<div>
+					Compartilhe com seus amigos sua posição e descubrirá quem está perto de você nesse momento.
+				</div>
+				<h3 style="margin-top:10px;">Idioma do Aplicativo</h3>
+				<ul class="list">
+					<li style="padding:10px;">Inglês (US)</li>
+					<li style="padding:10px;"><b>Português (BR)</b><i class="fa fa-check" style="float:right;"></i></li>
+				</ul>
