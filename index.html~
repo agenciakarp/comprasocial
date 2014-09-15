@@ -61,8 +61,6 @@
 	<script>
 		$.ui.useOSThemes=false;
 	</script>
-	<script src="intelxdk.js"></script>
-
 
 </head>
 <body id="body">

@@ -4,6 +4,11 @@ function show_modal(texto){
 	alert(texto);
 }
 
+//FUNCAO LOGIN FACEBOOK
+function facebook_login(){
+
+}
+
 //FUNCAO AUTOLOGIN
 function autologin(){
 	if(localStorage.getItem('token')){
@@ -117,7 +122,6 @@ function load_mapa(){
 function load_config(){
 	check_token();
 }
-
 
 //FUNCAO DE ESPERA PARA CARREGAR O APP
 function onDeviceReady() {

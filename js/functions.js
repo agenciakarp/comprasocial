@@ -4,6 +4,18 @@ function show_modal(texto){
 	alert(texto);
 }
 
+//FUNCAO LOGIN FACEBOOK
+function facebook_login(){
+	FB.init({
+		appId: '496715470431107',
+		nativeInterface: CDV.FB,
+		useCachedDialogs: false
+	});
+	FB.getLoginStatus(handleStatusChange);
+	authUser();
+	updateAuthElements();
+}
+
 //FUNCAO AUTOLOGIN
 function autologin(){
 	if(localStorage.getItem('token')){
