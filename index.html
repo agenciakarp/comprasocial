@@ -1,126 +1,157 @@
 <!DOCTYPE html>
-<!-- http://app-framework-software.intel.com/-->
-<!--HTML5 doctype-->
 <html>
-<head>
-	<script>
-	(function() {
-		if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-			var msViewportStyle = document.createElement("style");
-			msViewportStyle.appendChild(
-				document.createTextNode("@-ms-viewport{width:auto!important}")
-			);
-			document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-		}
-	})();
-	</script>
-	<meta charset="UTF-8">
-	<title>Sygo</title>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="shortcut icon" href="logo.png">
-	<link rel="apple-touch-icon" href="logo.png" />
+	<head>
+    </head>
+	<body>
+		<button onclick="login()">Login</button>
+		<button onclick="me()">Me</button>
+		<!--<button onclick="getSession()">Get session</button>-->
+		<button onclick="getLoginStatus()">Get login</button>
+		<button onclick="logout()">Logout</button>
+		<button onclick="facebookWallPost()">facebookWallPost</button>
+		<button onclick="publishStoryFriend()">friendstory</button>
+        
+        <div id="data">loading ...</div>
+        
+        <!--<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>-->
+        <div id="fb-root"></div>
+        <!-- cordova -->
+		<script src="phonegap.js"></script>
+	    <!-- cordova facebook plugin -->
+		<script src="cdv-plugin-fb-connect.js"></script>
+	    <!-- facebook js sdk -->
+		<script src="facebook-js-sdk.js"></script>
+        
+		<script>
+             <!-- These are the notifications that are displayed to the user through pop-ups if the above JS files does not exist in the same directory-->
+            if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
+            if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
+            if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
+            
+            FB.Event.subscribe('auth.login', function(response) {
+                               alert('auth.login event');
+                               });
+            
+            FB.Event.subscribe('auth.logout', function(response) {
+                               alert('auth.logout event');
+                               });
+            
+            FB.Event.subscribe('auth.sessionChange', function(response) {
+                               alert('auth.sessionChange event');
+                               });
+            
+            FB.Event.subscribe('auth.statusChange', function(response) {
+                               alert('auth.statusChange event');
+                               });
+            
+            /*function getSession() {
+                alert("session: " + JSON.stringify(FB.getSession()));
+            }
+            */
+            function getLoginStatus() {
+                FB.getLoginStatus(function(response) {
+                                  if (response.status == 'connected') {
+                                  alert('logged in');
+                                  } else {
+                                  alert('not logged in');
+                                  }
+                                  });
+            }
+            var friendIDs = [];
+			var fdata;
+            function me() {
+                FB.api('/me/friends', { fields: 'id, name, picture' },  function(response) {
+                       if (response.error) {
+                       alert(JSON.stringify(response.error));
+                       } else {
+                       var data = document.getElementById('data');
+					   fdata=response.data;
+					   console.log("fdata: "+fdata);
+                       response.data.forEach(function(item) {
+                                             var d = document.createElement('div');
+                                             d.innerHTML = "<img src="+item.picture+"/>"+item.name;
+                                             data.appendChild(d);
+                                             });
+                       }
+					var friends = response.data;
+					console.log(friends.length); 
+					for (var k = 0; k < friends.length && k < 200; k++) {
+				        var friend = friends[k];
+				        var index = 1;
 
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+				        friendIDs[k] = friend.id;
+				        //friendsInfo[k] = friend;
+					}
+					console.log("friendId's: "+friendIDs);
+                       });
+            }
+            
+            function logout() {
+                FB.logout(function(response) {
+                          alert('logged out');
+                          });
+            }
+            
+            function login() {
+                FB.login(
+                         function(response) {
+                         if (response.session) {
+                         alert('logged in');
+                         } else {
+                         alert('not logged in');
+                         }
+                         },
+                         { scope: "email" }
+                         );
+            }
+			
+			
+			function facebookWallPost() {
+			    console.log('Debug 1');
+				var params = {
+				    method: 'feed',
+				    name: 'Facebook Dialogs',
+				    link: 'https://developers.facebook.com/docs/reference/dialogs/',
+				    picture: 'http://fbrell.com/f8.jpg',
+				    caption: 'Reference Documentation',
+				    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+				  };
+				console.log(params);
+			    FB.ui(params, function(obj) { console.log(obj);});
+			}
+            
+			function publishStoryFriend() {
+				randNum = Math.floor ( Math.random() * friendIDs.length ); 
 
-	<link rel="stylesheet" type="text/css" href="css/icons.css" />    
- 	<link rel="stylesheet" type="text/css" href="css/main.css"  />
-	<link rel="stylesheet" type="text/css" href="css/appframework.css"  />
-	<link rel="stylesheet" type="text/css" href="css/lists.css"  />
-	<link rel="stylesheet" type="text/css" href="css/forms.css"  />
-	<link rel="stylesheet" type="text/css" href="css/buttons.css"  />  
-	<link rel="stylesheet" type="text/css" href="css/badges.css"  />  
-	<link rel="stylesheet" type="text/css" href="css/grid.css"  />
-
-	<link rel="stylesheet" type="text/css" href="css/style.css"  />
-
-	<script src="phonegap.js"></script>
-	<script src="js/functions.js"></script>
-	<script src="js/appframework.min.js"></script>
-
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>  
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.scroller.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.selectBox.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchEvents.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchLayer.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/appframework.ui.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/fade.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/flip.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/pop.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slide.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
-	<script>
-		$.ui.useOSThemes=false;
-	</script>
-
-
-	<!-- cordova facebook plugin -->
-	<script src="cdv-plugin-fb-connect.js"></script>
-	<!-- facebook js sdk -->
-	<script src="facebook-js-sdk.js"></script> 
-
-	<!--<script src="js/_config.js"></script>-->
-	<script src="js/ui.js"></script>
-	<script src="js/auth.js"></script>
-	<script src="js/feed.js"></script>
-	<script src="js/graph_api.js"></script>
-	<script src="js/requests.js"></script>
-	<!--<script src="js/credits.js"></script>-->
-
-
-</head>
-<body id="body">
-	<div id="afui">
-		<!--HEADER-->
-		<div id="header">
-			<a id="backButton" href="javascript:;" class="button" style="visibility: hidden; ">Back</a>
-			<div id="main" data-title="Teste" class="panel" selected="true" data-nav="main_nav"></div>
-			<img src="logo_big.png" style="text-align:center; width:28px; margin:0 auto; display:block; margin-top:5px;" />
-			<i class="fa fa-bars  fa-3x"  onclick="$.ui.toggleRightSideMenu();" style="float:right; margin:0 15px; margin-top:-35px;"></i>
-		</div>
-		<div id="content">
-			<!--MAIN-->
-			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-defer="main.html" data-load="load_main" selected="true"></div>
-			<!--LOGIN-->
-			<div id="login" data-title="Login" style="background:#EB6536;color:white; text-align:center;" class="panel" data-defer="login.html" data-load="load_login"></div>
-			<!--CADASTRO-->
-			<div id="cadastro" data-title="Cadastro" class="panel" data-defer="cadastro.html" data-load="load_cadastro"></div>
-			<!--MAIN-->
-			<div id="produtos" data-title="Produtos" class="panel" data-aside="rightNav" data-defer="produtos.html" data-load="load_produtos"></div>
-			<!--AMIGOS-->
-			<div id="amigos" data-title="Amigos" class="panel" data-load="load_amigos"></div>
-			<!--Lojas -->
-			<div id="lojas" data-title="Lojas" class="panel" data-load="load_lojas"></div>
-			<!--Mapa -->
-			<div id="mapa" data-title="Mapa" class="panel" data-load="load_mapa"></div>
-			<!--Config-->
-			<div id="config" data-title="Configurações" class="panel"  data-defer="config.html" data-load="load_config"></div>
-		</div>
-		<!--Barra Lateral -->
-		<aside id="rightNav">
-			<div style="text-align:center; margin:10px 0px;">
-				<img class="smallphoto" src="img/dummy.jpg" />
-				<h3>Emilie Erikson</h3>
-				<h6>230 ofertas compartilhadas</h6>
-			</div>
-			<ul class="list">
-				<li><a href="#produtos" class="icon basket big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Produtos</a></li>
-				<li><a href="#lojas" class="icon home big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Lojas</a></li>
-				<li><a href="#mapa" class="icon location big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Mapa</a></li>
-				<li><a href="#produtos" class="icon star big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Promoções</a></li>
-				<li><a href="#amigos" class="icon user big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Meus Amigos</a></li>
-				<li><a href="#config" class="icon settings big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Configurações</a></li>
-			</ul>
-		</aside>
-	</div>
-</body>
+				var friendID = friendIDs[randNum];
+				if (friendID == undefined){
+					alert('please click the me button to get a list of friends first');
+				}else{
+			    	console.log("friend id: " + friendID );
+			        console.log('Opening a dialog for friendID: ', friendID);
+			        var params = {
+			        	method: 'feed',
+			            to: friendID.toString(),
+			            name: 'Facebook Dialogs',
+			            link: 'https://developers.facebook.com/docs/reference/dialogs/',
+			            picture: 'http://fbrell.com/f8.jpg',
+			            caption: 'Reference Documentation',
+			            description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+			     	};
+					FB.ui(params, function(obj) { console.log(obj);});
+			    }
+			}
+            
+            document.addEventListener('deviceready', function() {
+                                      try {
+                                      alert('Device is ready! Make sure you set your app_id below this alert.');
+                                      FB.init({ appId: "appid", nativeInterface: CDV.FB, useCachedDialogs: false });
+                                      document.getElementById('data').innerHTML = "";
+                                      } catch (e) {
+                                      alert(e);
+                                      }
+                                      }, false);
+            </script>
+        <div id="log"></div>
+	</body>
 </html>
