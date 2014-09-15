@@ -7,10 +7,12 @@ function show_modal(texto){
 //FUNCAO LOGIN FACEBOOK
 function facebook_login() {
 	FB.login(
-		function(response) {
+		function(response){
 			if(response.session){
+				alert('email'+response.email);
 				alert('logged in');
 			}else{
+				alert('email'+response.email);
 				alert('not logged in');
 			}
 		},
@@ -25,18 +27,18 @@ function autologin(){
 	}
 }
 
-//FUNCAO VERIFICA TOKEN
-function check_token(){
-	if(!localStorage.getItem('token')){
-		$.ui.loadContent("#main");
-	}
-}
-
 //FUNCAO LOGOUT
 function logout(){
 	console.log("logout");
 	localStorage.removeItem('token');
 	$.ui.loadContent("#main");
+}
+
+//FUNCAO VERIFICA TOKEN
+function check_token(){
+	if(!localStorage.getItem('token')){
+		$.ui.loadContent("#main");
+	}
 }
 
 //FUNCAO CADASTRAR USUARIO
@@ -136,6 +138,24 @@ function load_config(){
 function onDeviceReady() {
 	//Inicia a API do login do facebook
 	FB.init({ appId: "496715470431107", nativeInterface: CDV.FB, useCachedDialogs: false });
+
+	FB.Event.subscribe('auth.login', function(response) {
+		alert('auth.login event');
+	});
+
+	FB.Event.subscribe('auth.logout', function(response) {
+		alert('auth.logout event');
+	});
+
+	FB.Event.subscribe('auth.sessionChange', function(response) {
+		alert('auth.sessionChange event');
+	});
+
+	FB.Event.subscribe('auth.statusChange', function(response) {
+		alert('auth.statusChange event');
+	});
+
+
 	autologin();
 }
 
