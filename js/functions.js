@@ -5,29 +5,17 @@ function show_modal(texto){
 }
 
 //FUNCAO LOGIN FACEBOOK
-function login() {
+function facebook_login() {
 	FB.login(
 		function(response) {
-			if (response.session) {
+			if(response.session){
 				alert('logged in');
-			} else {
+			}else{
 				alert('not logged in');
 			}
 		},
 		{ scope: "email" }
 	);
-}
-
-
-function facebook_login(){
-	FB.init({
-		appId: '496715470431107',
-		nativeInterface: CDV.FB,
-		useCachedDialogs: false
-	});
-	FB.getLoginStatus(handleStatusChange);
-	authUser();
-	updateAuthElements();
 }
 
 //FUNCAO AUTOLOGIN
@@ -144,9 +132,12 @@ function load_config(){
 	check_token();
 }
 
-//FUNCAO DE ESPERA PARA CARREGAR O APP
+//FUNCAO QUE ESPERA ATÉ CARREGAR O APP
 function onDeviceReady() {
+	//Inicia a API do login do facebook
+	FB.init({ appId: "496715470431107", nativeInterface: CDV.FB, useCachedDialogs: false });
 	autologin();
 }
+
 document.addEventListener("deviceready", onDeviceReady, false);
 autologin();
