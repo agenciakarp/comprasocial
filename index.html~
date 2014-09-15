@@ -37,32 +37,6 @@
 
 	<link rel="stylesheet" type="text/css" href="css/style.css"  />
 
-
-	<script src="phonegap.js"></script>
-	<script src="js/functions.js"></script>
-	<script src="js/appframework.min.js"></script>
-
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>  
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.scroller.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.selectBox.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchEvents.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchLayer.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/appframework.ui.js"></script>
-	<!-- <script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script> -->
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/fade.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/flip.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/pop.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slide.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
-	<script>
-		$.ui.useOSThemes=false;
-	</script>
-
 </head>
 <body id="body">
 	<div id="afui">
@@ -75,7 +49,17 @@
 		</div>
 		<div id="content">
 			<!--MAIN-->
-			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-defer="main.html" data-load="load_main" selected="true"></div>
+			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-defer="main.html" data-load="load_main" selected="true">
+				<div style="margin-top:60px;">
+					<h1>Compra Social</h1>
+					<h3>Encontre e compartilhe ofertas com seus amigos</h3></br>
+					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
+				</div>
+				<div style="width:100%;">
+					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
+					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
+				</div>
+			</div>
 			<!--LOGIN-->
 			<div id="login" data-title="Login" style="background:#EB6536;color:white; text-align:center;" class="panel" data-defer="login.html" data-load="load_login"></div>
 			<!--CADASTRO-->
@@ -110,4 +94,31 @@
 	</div>
 </body>
 </html>
+
+
+	<script src="phonegap.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/appframework.min.js"></script>
+
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>  
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.scroller.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.selectBox.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchEvents.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.touchLayer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/appframework.ui.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script> -->
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/fade.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/flip.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/pop.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slide.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
+	<script>
+		$.ui.useOSThemes=false;
+	</script>
+
 
