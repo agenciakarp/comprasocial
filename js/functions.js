@@ -5,6 +5,20 @@ function show_modal(texto){
 }
 
 //FUNCAO LOGIN FACEBOOK
+function login() {
+	FB.login(
+		function(response) {
+			if (response.session) {
+				alert('logged in');
+			} else {
+				alert('not logged in');
+			}
+		},
+		{ scope: "email" }
+	);
+}
+
+
 function facebook_login(){
 	FB.init({
 		appId: '496715470431107',

@@ -32,6 +32,13 @@
 
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.1.0" />
 
+<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+<param name="APP_ID" value="496715470431107" />
+<param name="APP_NAME" value="Sygo" />
+</gap:plugin>
+<access origin="*" />
+
+
 <preference name="phonegap-version"           value="3.5.0" />          <!-- all: current version of PhoneGap -->
 <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
