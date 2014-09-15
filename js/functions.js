@@ -118,7 +118,6 @@ function load_config(){
 	check_token();
 }
 
-
 //FUNCAO DE ESPERA PARA CARREGAR O APP
 function onDeviceReady() {
 	autologin();
