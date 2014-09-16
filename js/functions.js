@@ -145,6 +145,7 @@ function user_login(){
 		response = eval(data);
 		if(response==null){
 			show_modal("Ocorreu um erro");
+			app_logout();
 		}else{
 			localStorage.setItem('token', response[0]['id']);
 			localStorage.setItem('nome', response[0]['nome_usuario']);
