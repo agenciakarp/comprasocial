@@ -160,7 +160,7 @@
 			<!--Config-->
 			<div id="config" data-title="Configurações" class="panel"  data-load="load_config">
 				<ul class="list">
-					<li style="padding:10px;"><b>Facebook</b> <div style="float:right"> Conectar &#10095; </div></li>
+					<li style="padding:10px;"><b>Facebook</b> <div style="float:right" onclick="facebook_friends();"> Conectar &#10095; </div></li>
 				</ul>
 				<div>
 					Ativando o facebook você poderá fazer parte da rede social do aplicativo
@@ -169,7 +169,7 @@
 					<li style="padding:10px;">
 						<b>Exibir minha localização</b>
 						<div style="float:right; margin-right:20px;">
-							<input type="checkbox" name="slider" onchange="facebook_friends();" id="slider" class="toggle">
+							<input type="checkbox" name="slider" id="slider" class="toggle">
 							<label for="slider" data-on="On" data-off="Off" style="position:relative; top:-9px;"></label>
 						</div>
 					</li>
