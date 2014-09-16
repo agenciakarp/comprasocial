@@ -14,14 +14,14 @@ function facebook_login() {
 				alert('Not logged in');
 			}
 		},
-		{ scope: "email,name" }
+		{ scope: "email" }
 	);
 }
 
 //FUNCAO CONFIG CONECTAR COM FACEBOOK (AMIGOS)
 var friendIDs = [];
 var fdata;
-function me() {
+function facebook_friends() {
 	FB.api('/me/friends', { fields: 'id, name, picture' },  function(response) {
 		if (response.error) {
 			alert(JSON.stringify(response.error));

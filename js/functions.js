@@ -8,13 +8,14 @@ function show_modal(texto){
 function facebook_login() {
 	FB.login(
 		function(response){
+			alert(response);
 			if(response.session){
 				alert('email '+response.email);
 			}else{
 				alert('Not logged in');
 			}
 		},
-		{ scope: "email,name" }
+		{ scope: "email" }
 	);
 }
 
