@@ -270,6 +270,8 @@
 				<li><a href="#config" class="icon settings big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Configurações</a></li>
 			</ul>
 		</aside>
+		<!-- FOOTER -->
+		<div id="navbar"></div>
 	</div>
 </body>
 </html>
