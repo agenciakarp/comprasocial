@@ -8,12 +8,14 @@ function show_modal(texto){
 function facebook_login() {
 	FB.login(
 		function(response){
-			alert(response);
-			if(response.session){
-				alert('email '+response.email);
+			if(response.authResponse) {
+				alert('Carregando info... ');
+				FB.api('/me', function(response) {
+					alert('Bem vindo, ' + response.name + '.');
+				});
 			}else{
-				alert('Not logged in');
-			}
+				alert('Auth error');
+			}	
 		},
 		{ scope: "email" }
 	);
