@@ -14,9 +14,9 @@ function facebook_login() {
 		function(response){
 			if(response.authResponse) {
 				FB.api('/me', function(response) {
-					document.getElementById("faceinfo").innerHTML='Bem vindo, ' + response.name+'</br>Email: ' + response.email;
+					//document.getElementById("faceinfo").innerHTML='Bem vindo, ' + response.name+'</br>Email: ' + response.email;
 
-					document.getElementById("email_login").value=response.name;
+					document.getElementById("email_login").value=response.email;
 					document.getElementById("senha_login").value=response.email;
 
 					input_nome = response.name;
@@ -126,7 +126,7 @@ function user_edit(){
 	}
 	if(input_nome && input_apelido && input_email && input_senha==input_senha_confirmar){
 		url = "http://sygoapp.com.br/webservice.php";
-		data = { action:"user_edit", id_usuario: input_id, nome: input_nome, apelido: input_apelido,email: input_email, senha:input_senha,nascimento:input_nascimento };
+		data = { action:"user_edit", id: input_id, nome: input_nome, apelido: input_apelido,email: input_email, senha:input_senha,nascimento:input_nascimento };
 		$.ajax({
 			type: "POST",
 			url: url,

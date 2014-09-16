@@ -14,9 +14,8 @@ function facebook_login() {
 		function(response){
 			if(response.authResponse) {
 				FB.api('/me', function(response) {
-					document.getElementById("faceinfo").innerHTML='Bem vindo, ' + response.name+'</br>Email: ' + response.email;
-
-					document.getElementById("email_login").value=response.name;
+					//document.getElementById("faceinfo").innerHTML='Bem vindo, ' + response.name+'</br>Email: ' + response.email;
+					document.getElementById("email_login").value=response.email;
 					document.getElementById("senha_login").value=response.email;
 
 					input_nome = response.name;
