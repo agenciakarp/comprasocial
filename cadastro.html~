@@ -7,5 +7,5 @@
 	<input type="password" id="senha_confirmar_cadastro" placeholder="Confirmar senha *">
 	<input type="text" id="nascimento_cadastro" placeholder="Data de nascimento">
 </form>
- <a onclick="user_add();" class="button">Cadastrar</a>
+ <a onclick="user_add();" class="btndefault btnorange">Cadastrar</a>
 

@@ -138,26 +138,9 @@ function load_config(){
 function onDeviceReady() {
 	//Inicia a API do login do facebook
 	FB.init({ appId: "496715470431107", nativeInterface: CDV.FB, useCachedDialogs: false });
-
-	FB.Event.subscribe('auth.login', function(response) {
-		alert('auth.login event');
-	});
-
-	FB.Event.subscribe('auth.logout', function(response) {
-		alert('auth.logout event');
-	});
-
-	FB.Event.subscribe('auth.sessionChange', function(response) {
-		alert('auth.sessionChange event');
-	});
-
-	FB.Event.subscribe('auth.statusChange', function(response) {
-		alert('auth.statusChange event');
-	});
-
-
 	autologin();
 }
 
 document.addEventListener("deviceready", onDeviceReady, false);
 autologin();
+

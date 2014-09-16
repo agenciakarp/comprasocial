@@ -91,11 +91,42 @@
 			<!--MAIN-->
 			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-defer="main.html" data-load="load_main" selected="true"></div>
 			<!--LOGIN-->
-			<div id="login" data-title="Login" style="background:#EB6536;color:white; text-align:center;" class="panel" data-defer="login.html" data-load="load_login"></div>
+			<div id="login" data-title="Login" style="background:#EB6536;color:white; text-align:center;" class="panel" data-load="load_login">
+				<img src="img/logo.png" style="width:100px; margin:30px auto; display:block;"/>
+				<form>
+					<input type="text" id="email_login" style="color:#333;" placeholder="Email">
+					<input type="password" id="senha_login" style="color:#333;" placeholder="Senha">
+				</form>
+				 <a onclick="user_login();" class="btndefault btngreen">Entrar</a></br>
+				 <b>OU</b></br>
+				<a onclick="facebook_login();" class="btndefault btnblue">Acessar com facebook</a></br>
+			</div>
 			<!--CADASTRO-->
-			<div id="cadastro" data-title="Cadastro" class="panel" data-defer="cadastro.html" data-load="load_cadastro"></div>
+			<div id="cadastro" data-title="Cadastro" class="panel" data-load="load_cadastro">
+				<div class="formGroupHead">Cadastro</div>
+				<form>
+					<input type="text" id="nome_cadastro" placeholder="Nome *">
+					<input type="text" id="apelido_cadastro" placeholder="Apelido *">
+					<input type="text" id="email_cadastro" placeholder="Email *">
+					<input type="password" id="senha_cadastro" placeholder="Senha *">
+					<input type="password" id="senha_confirmar_cadastro" placeholder="Confirmar senha *">
+					<input type="text" id="nascimento_cadastro" placeholder="Data de nascimento">
+				</form>
+				 <a onclick="user_add();" class="btndefault btnorange">Cadastrar</a>
+			</div>
 			<!--MAIN-->
-			<div id="produtos" data-title="Produtos" class="panel" data-aside="rightNav" data-defer="produtos.html" data-load="load_produtos"></div>
+			<div id="produtos" data-title="Produtos" class="panel" data-aside="rightNav" data-load="load_produtos">
+				<div style="margin-top:60px;">
+					<h1>Compra Social</h1>
+					<h3>Encontre e compartilhe ofertas com seus amigos</h3></br>
+					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
+				</div>
+				<!--<div style="width:100%; position:absolute; bottom:50px;">-->
+				<div style="width:100%;">
+					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
+					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
+				</div>
+			</div>
 			<!--AMIGOS-->
 			<div id="amigos" data-title="Amigos" class="panel" data-load="load_amigos"></div>
 			<!--Lojas -->
@@ -103,7 +134,32 @@
 			<!--Mapa -->
 			<div id="mapa" data-title="Mapa" class="panel" data-load="load_mapa"></div>
 			<!--Config-->
-			<div id="config" data-title="Configurações" class="panel"  data-defer="config.html" data-load="load_config"></div>
+			<div id="config" data-title="Configurações" class="panel"  data-load="load_config">
+				<ul class="list">
+					<li style="padding:10px;"><b>Facebook</b> <div style="float:right"> Conectar &#10095; </div></li>
+				</ul>
+				<div>
+					Ativando o facebook você poderá fazer parte da rede social do aplicativo
+				</div>
+				<ul class="list">
+					<li style="padding:10px;">
+						<b>Exibir minha localização</b>
+						<div style="float:right; margin-right:20px;">
+							<input type="checkbox" name="slider" id="slider" class="toggle">
+							<label for="slider" data-on="On" data-off="Off" style="position:relative; top:-9px;"></label>
+						</div>
+					</li>
+				</ul>
+				<div>
+					Compartilhe com seus amigos sua posição e descubrirá quem está perto de você nesse momento.
+				</div>
+				<h3 style="margin-top:10px;">Idioma do Aplicativo</h3>
+				<ul class="list">
+					<li style="padding:10px;">Inglês (US)</li>
+					<li style="padding:10px;"><b>Português (BR)</b><i class="fa fa-check" style="float:right;"></i></li>
+				</ul>
+				<h1 style="margin-top:10px;"><a onclick="logout();">SAIR (DEVELOPER)</a></h1>
+			</div>
 		</div>
 		<!--Barra Lateral -->
 		<aside id="rightNav">

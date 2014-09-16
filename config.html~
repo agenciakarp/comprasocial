@@ -21,3 +21,5 @@
 	<li style="padding:10px;">Inglês (US)</li>
 	<li style="padding:10px;"><b>Português (BR)</b><i class="fa fa-check" style="float:right;"></i></li>
 </ul>
+<h1 style="margin-top:10px;"><a onclick="logout();">SAIR (DEVELOPER)</a></h1>
+

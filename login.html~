@@ -6,7 +6,7 @@
  <a onclick="user_login();" class="btndefault btngreen">Entrar</a></br>
  <b>OU</b></br>
  
-<a onclick="login_facebook();" class="btndefault btnblue">Acessar com facebook</a></br>
+<a onclick="facebook_login();" class="btndefault btnblue">Acessar com facebook</a></br>
 <!--document.getElementById("iframefacebook").contentWindow-->
 <!--<iframe src="http://sygoapp.com.br/app/facebooklogin.html" style="width:100%; height:50px; border:0px;" id="iframefacebook"></iframe>-->
  
