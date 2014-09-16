@@ -11,14 +11,14 @@ function facebook_login() {
 			if(response.authResponse) {
 				alert('Carregando info... ');
 				FB.api('/me', function(response) {
-					alert('Bem vindo, ' + response.name + '.');
-					alert('Email: ' + response.email + '.');
+					alert('Bem vindo, ' + response.name);
+					alert('Email: ' + response.email);
 				});
 			}else{
 				alert('Auth error');
 			}	
 		},
-		{ scope: "email" }
+		{ scope: "email,user_friends" }
 	);
 }
 
@@ -26,10 +26,11 @@ function facebook_login() {
 function facebook_friends() {
 	FB.api('/me/friends', { fields: 'id, name, picture' },  function(response) {
 		if(response.error) {
+			alert("Erro");
 			alert(JSON.stringify(response.error));
 		}else{
 			alert(response.data.length);
-			alert(response.data[0].name);
+			alert(response.data[0].id);
 			alert(response.data[1].name);
 		}
 	});
