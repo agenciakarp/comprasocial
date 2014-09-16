@@ -85,11 +85,22 @@
 			<a id="backButton" href="javascript:;" class="button" style="visibility: hidden; ">Back</a>
 			<div id="main" data-title="Teste" class="panel" selected="true" data-nav="main_nav"></div>
 			<img src="logo_big.png" style="text-align:center; width:28px; margin:0 auto; display:block; margin-top:5px;" />
-			<i class="fa fa-bars  fa-3x"  onclick="$.ui.toggleRightSideMenu();" style="float:right; margin:0 15px; margin-top:-35px;"></i>
+			<i id="btnsidebar" class="fa fa-bars  fa-3x"  onclick="$.ui.toggleRightSideMenu();" style="float:right; margin:0 15px; margin-top:-35px;"></i>
 		</div>
 		<div id="content">
 			<!--MAIN-->
-			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-defer="main.html" data-load="load_main" selected="true"></div>
+			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-load="load_main" selected="true">
+				<div style="margin-top:60px;">
+					<h1>Compra Social</h1>
+					<h3>Encontre e compartilhe ofertas com seus amigos</h3></br>
+					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
+				</div>
+				<!--<div style="width:100%; position:absolute; bottom:50px;">-->
+				<div style="width:100%;">
+					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
+					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
+				</div>
+			</div>
 			<!--LOGIN-->
 			<div id="login" data-title="Login" style="background:#EB6536;color:white; text-align:center;" class="panel" data-load="load_login">
 				<img src="img/logo.png" style="width:100px; margin:30px auto; display:block;"/>
@@ -114,17 +125,99 @@
 				</form>
 				 <a onclick="user_add();" class="btndefault btnorange">Cadastrar</a>
 			</div>
-			<!--MAIN-->
+			<!--PRODUTOS-->
 			<div id="produtos" data-title="Produtos" class="panel" data-aside="rightNav" data-load="load_produtos">
-				<div style="margin-top:60px;">
-					<h1>Compra Social</h1>
-					<h3>Encontre e compartilhe ofertas com seus amigos</h3></br>
-					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
 				</div>
-				<!--<div style="width:100%; position:absolute; bottom:50px;">-->
-				<div style="width:100%;">
-					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
-					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="cardcontainer">
+					<div class="card">
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<img class="smallphoto"  src="img/dummy.jpg" />
+						</div>
+						<div style="display:inline-block; vertical-align:middle; margin:0 5px;">
+							<h3>Emilie Erikson</h3>
+							<h6>Publicado as 10:22</h6>
+						</div>
+						<img src="img/dummyfruit.png" />
+						<div>Estou interessado em um limão quadrado, alguém conhece uma loja com ótimo preço?</div>
+					</div>
+					<div class="card_btn">
+						<div style="width:49%; display:inline-block;">
+							<b>42 Gosteis</b>
+						</div>
+						<div style="width:49%; display:inline-block; text-align:right;">
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+							<div href="#main" class="icon basket big" style="position: relative; display:inline-block; margin:5px;"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!--AMIGOS-->
@@ -158,7 +251,7 @@
 					<li style="padding:10px;">Inglês (US)</li>
 					<li style="padding:10px;"><b>Português (BR)</b><i class="fa fa-check" style="float:right;"></i></li>
 				</ul>
-				<h1 style="margin-top:10px;"><a onclick="logout();">SAIR (DEVELOPER)</a></h1>
+				<h1 style="margin-top:10px;"><a onclick="app_logout();">SAIR (DEVELOPER)</a></h1>
 			</div>
 		</div>
 		<!--Barra Lateral -->

@@ -85,7 +85,7 @@
 			<a id="backButton" href="javascript:;" class="button" style="visibility: hidden; ">Back</a>
 			<div id="main" data-title="Teste" class="panel" selected="true" data-nav="main_nav"></div>
 			<img src="logo_big.png" style="text-align:center; width:28px; margin:0 auto; display:block; margin-top:5px;" />
-			<i class="fa fa-bars  fa-3x"  onclick="$.ui.toggleRightSideMenu();" style="float:right; margin:0 15px; margin-top:-35px;"></i>
+			<i id="btnsidebar" class="fa fa-bars  fa-3x"  onclick="$.ui.toggleRightSideMenu();" style="float:right; margin:0 15px; margin-top:-35px;"></i>
 		</div>
 		<div id="content">
 			<!--MAIN-->
@@ -251,7 +251,7 @@
 					<li style="padding:10px;">Inglês (US)</li>
 					<li style="padding:10px;"><b>Português (BR)</b><i class="fa fa-check" style="float:right;"></i></li>
 				</ul>
-				<h1 style="margin-top:10px;"><a onclick="logout();">SAIR (DEVELOPER)</a></h1>
+				<h1 style="margin-top:10px;"><a onclick="app_logout();">SAIR (DEVELOPER)</a></h1>
 			</div>
 		</div>
 		<!--Barra Lateral -->
@@ -270,6 +270,8 @@
 				<li><a href="#config" class="icon settings big" onclick="$.ui.toggleRightSideMenu();" style="position: relative;">Configurações</a></li>
 			</ul>
 		</aside>
+		<!-- FOOTER -->
+		<div id="navbar"></div>
 	</div>
 </body>
 </html>

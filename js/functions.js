@@ -9,14 +9,12 @@ function facebook_login() {
 	FB.login(
 		function(response){
 			if(response.session){
-				alert('email'+response.email);
-				alert('logged in');
+				alert('email '+response.email);
 			}else{
-				alert('email'+response.email);
-				alert('not logged in');
+				alert('Not logged in');
 			}
 		},
-		{ scope: "email" }
+		{ scope: "email,name" }
 	);
 }
 
@@ -28,7 +26,7 @@ function autologin(){
 }
 
 //FUNCAO LOGOUT
-function logout(){
+function app_logout(){
 	console.log("logout");
 	localStorage.removeItem('token');
 	$.ui.loadContent("#main");
@@ -97,41 +95,57 @@ function user_login(){
 //FUNCAO CARREGAR O PAINEL MAIN
 function load_main(){
 	autologin();
+	$.ui.disableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="none";
 }
 
 //FUNCAO CARREGAR O PAINEL LOGIN
 function load_login(){
 	autologin();
+	$.ui.disableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="none";
 }
 
 //FUNCAO CARREGAR O PAINEL CADASTRO
 function load_cadastro(){
 	autologin();
+	$.ui.disableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="none";
 }
 
 //FUNCAO CARREGAR O PAINEL PRODUTOS
 function load_produtos(){
 	check_token();
+	$.ui.enableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="block";
 }
 
 //FUNCAO CARREGAR O PAINEL AMIGOS
 function load_amigos(){
 	check_token();
+	$.ui.enableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="block";
 }
 
 //FUNCAO CARREGAR O PAINEL LOJAS
 function load_lojas(){
 	check_token();
+	$.ui.enableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="block";
 }
 
 //FUNCAO CARREGAR O PAINEL MAPA
 function load_mapa(){
 	check_token();
+	$.ui.enableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="block";
 }
 
 //FUNCAO CARREGAR O PAINEL CONFIG
 function load_config(){
 	check_token();
+	$.ui.enableRightSideMenu();
+	document.getElementById("btnsidebar").style.display="block";
 }
 
 //FUNCAO QUE ESPERA ATÉ CARREGAR O APP
