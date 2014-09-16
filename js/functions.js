@@ -13,6 +13,7 @@ function facebook_login() {
 				FB.api('/me', function(response) {
 					alert('Bem vindo, ' + response.name);
 					alert('Email: ' + response.email);
+					document.getElementById("faceinfo").innerHTML='Bem vindo, ' + response.name+'</br>Email: ' + response.email;
 				});
 			}else{
 				alert('Auth error');

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "comprasocial.com.br.comprasocial"
+        id        = "br.com.karp.sygo"
         versionCode="10" 
         version   = "1.1.0">
 
@@ -33,8 +33,8 @@
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.1.0" />
 
 <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
-<param name="APP_ID" value="496715470431107" />
-<param name="APP_NAME" value="Sygo" />
+	<param name="APP_ID" value="496715470431107" />
+	<param name="APP_NAME" value="Sygo" />
 </gap:plugin>
 <access origin="*" />
 
