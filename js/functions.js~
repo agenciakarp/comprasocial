@@ -30,8 +30,7 @@ function facebook_friends() {
 			alert(JSON.stringify(response.error));
 		}else{
 			alert("Total de Amigos "+response.summary['total_count']);
-			alert("Amigo 1: "+response.data['id'][0]);
-			alert("Amigo 1: "+response.data[0]['id']);
+			alert("Amigo 1: "+response.data['id']);
 		}
 	});
 }
