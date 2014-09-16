@@ -96,7 +96,7 @@
 					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
 				</div>
 				<!--<div style="width:100%; position:absolute; bottom:50px;">-->
-				<div style="width:100%;">
+				<div style="width:100%; position:absolute; bottom:70px;">
 					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
 					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
 				</div>
@@ -111,6 +111,7 @@
 				 <a onclick="user_login();" class="btndefault btngreen">Entrar</a></br>
 				 <b>OU</b></br>
 				<a onclick="facebook_login();" class="btndefault btnblue">Acessar com facebook</a></br>
+				<div id="faceinfo"></div>
 			</div>
 			<!--CADASTRO-->
 			<div id="cadastro" data-title="Cadastro" class="panel" data-load="load_cadastro">
@@ -159,11 +160,13 @@
 			<div id="mapa" data-title="Mapa" class="panel" data-load="load_mapa"></div>
 			<!--Config-->
 			<div id="config" data-title="Configurações" class="panel"  data-load="load_config">
-				<ul class="list">
-					<li style="padding:10px;"><b>Facebook</b> <div style="float:right" onclick="facebook_friends();"> Conectar &#10095; </div></li>
-				</ul>
-				<div>
-					Ativando o facebook você poderá fazer parte da rede social do aplicativo
+				<div id="config_facebook" style="display:none;">
+					<ul class="list">
+						<li style="padding:10px;"><b>Facebook</b> <div style="float:right" onclick="facebook_friends();"> Conectar &#10095; </div></li>
+					</ul>
+					<div>
+						Ativando o facebook você poderá fazer parte da rede social do aplicativo
+					</div>
 				</div>
 				<ul class="list">
 					<li style="padding:10px;">
@@ -177,6 +180,18 @@
 				<div>
 					Compartilhe com seus amigos sua posição e descubrirá quem está perto de você nesse momento.
 				</div>
+				<div id="config_profile" style="display:none;" />
+					<div class="formGroupHead">Editar perfil</div>
+					<form>
+						<input type="text" id="nome_edit" placeholder="Nome *">
+						<input type="text" id="apelido_edit" placeholder="Apelido *">
+						<input type="text" id="email_edit" placeholder="Email *">
+						<input type="password" id="senha_edit" placeholder="Senha *">
+						<input type="password" id="senha_confirmar_edit" placeholder="Confirmar senha *">
+						<input type="text" id="nascimento_edit" placeholder="Data de nascimento">
+					</form>
+					 <a onclick="user_edit();" class="btndefault btnorange">Salvar</a>
+				</div>				
 				<h3 style="margin-top:10px;">Idioma do Aplicativo</h3>
 				<ul class="list">
 					<li style="padding:10px;">Inglês (US)</li>
