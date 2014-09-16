@@ -29,9 +29,7 @@ function facebook_friends() {
 			alert("Erro");
 			alert(JSON.stringify(response.error));
 		}else{
-			alert(response.data.length);
-			alert(response.data[0].id);
-			alert(response.data[1].name);
+			alert("Amigos "+response.data);
 		}
 	});
 }
