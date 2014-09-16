@@ -31,7 +31,7 @@ function facebook_friends() {
 		}else{
 			alert("Total de Amigos "+response.summary['total_count']);
 			alert("Amigo 1: "+response.data[0].name);
-			alert("Amigo 2: "+response.data[0].name);
+			alert("Amigo 2: "+response.data[1].name);
 		}
 	});
 }
