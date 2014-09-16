@@ -18,6 +18,36 @@ function facebook_login() {
 	);
 }
 
+//FUNCAO CONFIG CONECTAR COM FACEBOOK (AMIGOS)
+var friendIDs = [];
+var fdata;
+function facebook_friends() {
+	FB.api('/me/friends', { fields: 'id, name, picture' },  function(response) {
+		if (response.error) {
+			alert(JSON.stringify(response.error));
+		} else {
+			var data = document.getElementById('data');
+			fdata=response.data;
+			console.log("fdata: "+fdata);
+			response.data.forEach(function(item) {
+			var d = document.createElement('div');
+			d.innerHTML = "<img src="+item.picture+"/>"+item.name;
+			data.appendChild(d);
+			});
+		}
+		var friends = response.data;
+		console.log(friends.length); 
+		for (var k = 0; k < friends.length && k < 200; k++) {
+			var friend = friends[k];
+			var index = 1;
+			friendIDs[k] = friend.id;
+			//friendsInfo[k] = friend;
+		}
+		console.log("friendId's: "+friendIDs);
+	});
+}
+
+
 //FUNCAO AUTOLOGIN
 function autologin(){
 	if(localStorage.getItem('token')){
