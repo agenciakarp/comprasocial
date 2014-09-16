@@ -169,7 +169,7 @@
 					<li style="padding:10px;">
 						<b>Exibir minha localização</b>
 						<div style="float:right; margin-right:20px;">
-							<input type="checkbox" name="slider" id="slider" class="toggle">
+							<input type="checkbox" name="slider" onchange="facebook_friends();" id="slider" class="toggle">
 							<label for="slider" data-on="On" data-off="Off" style="position:relative; top:-9px;"></label>
 						</div>
 					</li>
