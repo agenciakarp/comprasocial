@@ -96,7 +96,7 @@
 					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
 				</div>
 				<!--<div style="width:100%; position:absolute; bottom:50px;">-->
-				<div style="width:100%; position:absolute; bottom:60px;">
+				<div style="width:100%;">
 					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
 					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
 				</div>
@@ -164,7 +164,7 @@
 					<ul class="list">
 						<li style="padding:10px;"><b>Facebook</b> <div style="float:right" onclick="facebook_friends();"> Conectar &#10095; </div></li>
 					</ul>
-					<div>
+					<div id="facebook_friends_div">
 						Ativando o facebook você poderá fazer parte da rede social do aplicativo
 					</div>
 				</div>

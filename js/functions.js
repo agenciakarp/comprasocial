@@ -62,8 +62,9 @@ function facebook_friends() {
 //FUNCAO LISTAR AMIGOS FACEBOOK
 function facebook_friends_list(input_friend){
 	input_id=localStorage.getItem('token');
+	document.getElementById("facebook_friends_div").innerHTML="";
 	function success(data,status){
-		console.log(data);
+		document.getElementById("facebook_friends_div").innerHTML+="<div>"+response[0]['nome_usuario']+"</div>";
 	}
 	url = "http://sygoapp.com.br/webservice.php";
 	data = { action:"facebook_friends", id:input_id, friend:input_friend };
@@ -245,6 +246,7 @@ function load_config(){
 	check_token();
 	$.ui.enableRightSideMenu();
 	if(localStorage.getItem('facebooklogin')==1){
+		document.getElementById("facebook_friends_div").innerHTML="Ativando o facebook você poderá fazer parte da rede social do aplicativo";
 		document.getElementById("config_facebook").style.display="block";
 		document.getElementById("config_profile").style.display="none";
 	}else{
