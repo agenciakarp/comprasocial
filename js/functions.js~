@@ -52,8 +52,24 @@ function facebook_friends() {
 			show_modal(JSON.stringify(response.error));
 		}else{
 			show_modal("Total de Amigos "+response.summary['total_count']);
-			show_modal("Amigo 1: "+JSON.stringify(response.data[1]));
+			show_modal("Amigo 1: "+JSON.stringify(response.data));
+			//facebook_friends_list();
 		}
+	});
+}
+//FUNCAO LISTAR AMIGOS FACEBOOK
+function facebook_friends_list(input_friend){
+	input_id=localStorage.getItem('token');
+	function success(data,status){
+		console.log(data);
+	}
+	url = "http://sygoapp.com.br/webservice.php";
+	data = { action:"facebook_friends", id:input_id, friend:input_friend };
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: data,
+		success: success
 	});
 }
 
@@ -156,7 +172,12 @@ function user_login(){
 	}
 	if(input_email && input_senha){
 		url = "http://sygoapp.com.br/webservice.php";
-		data = { action:"user_login", email: input_email, senha:input_senha };
+		if(localStorage.getItem('facebooklogin')=='1'){
+			input_action = "user_login_facebook";
+		}else{
+			input_action = "user_login";
+		}
+		data = { action:input_action, email: input_email, senha:input_senha };
 		$.ajax({
 			type: "POST",
 			url: url,
