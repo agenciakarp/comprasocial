@@ -52,8 +52,8 @@ function facebook_friends() {
 			show_modal(JSON.stringify(response.error));
 		}else{
 			show_modal("Amigo 1: "+JSON.stringify(response.data[0]['name']));
-			for(i=0; i<response.data.length){
-				amigo = response.data[0]['name'];
+			for(i=0; i<response.data.length;i++){
+				amigo = response.data[i]['name'];
 				facebook_friends_list(amigo);
 			}
 		}
