@@ -64,7 +64,7 @@ function facebook_friends_list(input_friend){
 	input_id=localStorage.getItem('token');
 	document.getElementById("facebook_friends_div").innerHTML="";
 	function success(data,status){
-		document.getElementById("facebook_friends_div").innerHTML+="<div>"+response[0]['nome_usuario']+"</div>";
+		document.getElementById("facebook_friends_div").innerHTML+="<div style='margin:5px 0px;'>"+response[0]['nome_usuario']+" - "+response[0]['email']+"</div>";
 	}
 	url = "http://sygoapp.com.br/webservice.php";
 	data = { action:"facebook_friends", id:input_id, friend:input_friend };
