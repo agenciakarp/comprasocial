@@ -37,6 +37,7 @@
 <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
 	<param name="APP_ID" value="496715470431107" />
 	<param name="APP_NAME" value="Sygo" />
+	<param name="BUNDLE_ID" value="br.com.karp.sygo" />
 </gap:plugin>
 <access origin="*" />
 

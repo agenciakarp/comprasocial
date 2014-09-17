@@ -31,6 +31,8 @@
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.1.0" />
+<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
+
 
 <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
 	<param name="APP_ID" value="496715470431107" />

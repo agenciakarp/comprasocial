@@ -17,7 +17,6 @@ function facebook_login() {
 					//document.getElementById("faceinfo").innerHTML='Bem vindo, ' + response.name+'</br>Email: ' + response.email;
 					document.getElementById("email_login").value=response.email;
 					document.getElementById("senha_login").value=response.email;
-
 					input_nome = response.name;
 					input_apelido = response.name;
 					input_email = response.email;
@@ -145,6 +144,7 @@ function user_login(){
 		response = eval(data);
 		if(response==null){
 			show_modal("Ocorreu um erro");
+			app_logout();
 		}else{
 			localStorage.setItem('token', response[0]['id']);
 			localStorage.setItem('nome', response[0]['nome_usuario']);
