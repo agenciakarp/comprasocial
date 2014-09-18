@@ -266,7 +266,6 @@ function onDeviceReady() {
 	FB.init({ appId: "496715470431107", nativeInterface: CDV.FB, useCachedDialogs: false });
 	autologin();
 }
-
 document.addEventListener("deviceready", onDeviceReady, false);
 autologin();
 

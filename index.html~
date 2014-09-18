@@ -38,7 +38,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css"  />
 
 	<script src="phonegap.js"></script>
-	<script src="js/functions.js"></script>
 	<script src="js/appframework.min.js"></script>
 
 	<script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
@@ -76,6 +75,26 @@
 	<script src="js/requests.js"></script>
 	<!--<script src="js/credits.js"></script>-->
 
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '496715470431107',
+			xfbml      : true,
+			version    : 'v2.1'
+		});
+	};
+	(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<script src="js/functions.js"></script>
+
+
 
 </head>
 <body id="body">
@@ -96,7 +115,7 @@
 					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
 				</div>
 				<!--<div style="width:100%; position:absolute; bottom:50px;">-->
-				<div style="width:100%;">
+				<div style="width:100%; position:absolute; bottom:12%;">
 					<a href="#login"><div class="btndefault btnorange">Entrar</div></a>
 					<a href="#cadastro"><div class="btndefault btnorange">Cadastrar</div></a>
 				</div>
@@ -164,7 +183,7 @@
 					<ul class="list">
 						<li style="padding:10px;"><b>Facebook</b> <div style="float:right" onclick="facebook_friends();"> Conectar &#10095; </div></li>
 					</ul>
-					<div id="facebook_friends_div">
+					<div id="facebook_friends_div" style="margin:5px 0px;">
 						Ativando o facebook você poderá fazer parte da rede social do aplicativo
 					</div>
 				</div>
@@ -177,7 +196,7 @@
 						</div>
 					</li>
 				</ul>
-				<div>
+				<div style="margin:5px 0px;">
 					Compartilhe com seus amigos sua posição e descubrirá quem está perto de você nesse momento.
 				</div>
 				<div id="config_profile" style="display:none;" />

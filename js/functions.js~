@@ -51,7 +51,7 @@ function facebook_friends() {
 			show_modal("Erro");
 			show_modal(JSON.stringify(response.error));
 		}else{
-			//show_modal("Amigo 1: "+JSON.stringify(response.data[0]['name']));
+			show_modal("Amigo 1: "+JSON.stringify(response.data[0]['name']));
 			for(i=0; i<response.data.length;i++){
 				amigo = response.data[i]['name'];
 				facebook_friends_list(amigo);
@@ -269,4 +269,5 @@ function onDeviceReady() {
 
 document.addEventListener("deviceready", onDeviceReady, false);
 autologin();
+FB.init({ appId: "496715470431107", nativeInterface: CDV.FB, useCachedDialogs: false });
 
