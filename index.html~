@@ -93,10 +93,7 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<div id="fb-root"></div>
-
 	<script src="js/functions.js"></script>
-
-
 
 </head>
 <body id="body">
