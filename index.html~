@@ -63,7 +63,7 @@
 
 
 	<!-- cordova facebook plugin -->
-	<!--<script src="cdv-plugin-fb-connect.js"></script>-->
+	<script src="cdv-plugin-fb-connect.js"></script>
 	<!-- facebook js sdk -->
 	<script src="facebook-js-sdk.js"></script> 
 
@@ -112,7 +112,7 @@
 			<!--MAIN-->
 			<div id="main" data-title="Inicio" style="text-align:center; background-image:url('img/bginicio.png'); background-size:100% 100%;" class="panel" data-load="load_main" selected="true">
 				<div style="margin-top:60px;">
-					<h1>Compra Social</h1>
+					<h1>Compra Social </h1>
 					<h3>Encontre e compartilhe ofertas com seus amigos</h3></br>
 					<img src="img/logo_orange.png" style="width:100px; margin:30px auto; display:block;"/>
 				</div>
